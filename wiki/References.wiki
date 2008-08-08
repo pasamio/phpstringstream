@@ -1,5 +1,5 @@
 #summary References for further reading
 
-[http://www.php.net/stream PHP Manual Streams Entry]
-[http://www.php.net/manual/en/function.fopen.php PHP Manual fopen Entry]
-[http://cesarodas.com/2007/09/php-amazon-s3-stream-wrapper.html Amazon S3 Stream Wrapper] - I borrowed some template code from here
+  * [http://www.php.net/stream PHP Manual Streams Entry]
+  * [http://www.php.net/manual/en/function.fopen.php PHP Manual fopen Entry]
+  * [http://cesarodas.com/2007/09/php-amazon-s3-stream-wrapper.html Amazon S3 Stream Wrapper] - I borrowed some template code from here
