@@ -1,0 +1,17 @@
+#summary Project motivation
+
+I was mentoring for Summer of Code and my student asked me if I had any decent 
+code for parsing a CSV string. I didn't, but noticed that there was a PHP 
+function that would, fgetcsv. The problem being in this case that the CSV
+file was already in a PHP string. I looked at the built-in "data" stream
+which provides similar functionality (but not the same!) however an fopen
+with it causes a duplication of data for the string, which really isn't
+good. Additionally, the "data" stream requires the information to be in a 
+certain format which may or may not be acceptable in certain circumstances. So 
+I searched on how to make a stream, found the page noted at the bottom which 
+is an Amazon S3 Stream Wrapper and made my own stream.   
+
+Whilst a bit 'clunky' compared to most streams, it solves the problem, with
+approximately 1k of memory usage (which if you have a large CSV file, is a
+really smaller number). The alternative was to use a PHP written CSV parser or
+to put it into a file. I feel that this solution is nicer.
