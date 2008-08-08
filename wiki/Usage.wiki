@@ -1,0 +1,27 @@
+#summary Usage information on how to use the wrapper
+
+= Introduction =
+
+The String Stream Wrapper is comprised of two classes: a string stream wrapper class and a simple controller class. The wrapper is registered to handle requests and the controller class is used to create references to strings so that it can be proxied to the wrapper.
+
+Please note that it is necessary to to create a reference first and that 
+reference will always point to the same string, which includes any 
+modifications you make to the string. 
+
+= Sample code =
+{{{
+require('stringstream.php');
+$mystring = "This,is,a,CSV,string";
+StringStreamController::createRef('reference',$mystring);
+$file = fopen('string://reference');
+while($row = fgetcsv($file)) {
+   print_r($row);
+   echo '<br />';
+}
+fclose($file);
+}}}
+
+$file is now a file handle, you can use this for any function that requests a
+file handle, such as fgetcsv in this example.
+
+
